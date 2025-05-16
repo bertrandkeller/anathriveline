@@ -7,10 +7,10 @@ slug: see-also-read-next
 author: John Doe
 
 draft: false
-date: "2020-11-17T21:21:46-05:00"
+date: 2020-11-17T21:21:46-05:00
 lastmod: 
-expirydate: ""
-publishdate: ""
+expirydate: 
+publishdate: 
 
 feature_image: 
 feature_image_alt: 

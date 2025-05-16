@@ -6,7 +6,7 @@ slug: {{ .Name }}
 author: {{ .Site.Params.author }}
 
 draft: true
-date: "{{ .Date }}"
+date: {{ .Date }}
 
 newsletter: true
 ---

@@ -8682,7 +8682,7 @@
 	        return this.types.hasOwnProperty(name) ? this.types[name] : null;
 	    },
 
-	    validate: "function() {"
+	    validate: function() {
 	        function validate(syntax, name, broken, descriptor) {
 	            if (broken.hasOwnProperty(name)) {
 	                return broken[name];

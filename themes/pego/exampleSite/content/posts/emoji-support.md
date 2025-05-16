@@ -7,10 +7,10 @@ slug: emoji-support
 author: John Doe
 
 draft: false
-date: "2020-11-17T21:21:46-05:00"
+date: 2020-11-17T21:21:46-05:00
 lastmod: 2020-11-18T21:21:46-05:00
-expirydate: ""
-publishdate: ""
+expirydate: 
+publishdate: 
 
 feature_image: 
 feature_image_alt: 
