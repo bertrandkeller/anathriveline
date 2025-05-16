@@ -10,7 +10,7 @@
     {{ with .Params.reference }}Liens : {{ . | safeHTML }}{{ end }}<br>
     {{ with .Params.link }}Liens link : {{ . | safeHTML }}{{ end }}<br>
     {{ with .Params.author }}Auteur(s): {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.tags }}Tags : {{ . | safeHTML }}{{ end }}
+    {{ with .Params.tags }}Tags : {{ . }}{{ end }}
     <hr>
     {{ with .Params.blockquote }}{{ . | safeHTML }}{{ end }}
     {{ partialCached "content.html" .Content .Content }}
