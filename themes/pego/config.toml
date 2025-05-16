@@ -1,0 +1,22 @@
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.111.0"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputformats]
+  _merge = 'deep'
+[outputFormats.pagejs]
+  baseName = "print"
+  mediaType = "text/html"
+  notAlternative = false
+  permalinkable = true
+  isHTML = true
+[outputFormats.presentation]
+  baseName = "presentation"
+  mediaType = "text/html"
+  notAlternative = false
+  permalinkable = true
+  isHTML = true

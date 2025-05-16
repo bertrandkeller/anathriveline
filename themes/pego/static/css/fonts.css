@@ -1,0 +1,28 @@
+@font-face {
+	font-family: Atkinson;
+	font-style: normal;
+	font-weight: 400;
+	src: url("./../fonts/Atkinson-Regular.woff2") format("woff2");
+  display: swap;
+}
+
+@font-face {
+	font-family: Atkinson;
+	font-style: italic;
+  font-weight: 400;
+	src: url("./../fonts/Atkinson-Italic.woff2") format("woff2");
+  display: swap;
+}
+
+@font-face {
+	font-family: Atkinson;
+	font-style: normal;
+	font-weight: 500;
+	src: url("./../fonts/Atkinson-Bold.woff2") format("woff2");
+  display: swap;
+}
+
+@font-face {
+	font-family: "Virgil";
+	src: url("./../fonts/virgil/virgil.woff2");
+  }

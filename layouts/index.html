@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{- $filter     := images.Contrast -10 }}
+{{- $avatar     := (((resources.Get "/illustration/avatar.jpg")).Resize "350x webp").Permalink  }}
+{{- $background_s := (((resources.Get "/illustration/background-home.jpg").Filter $filter).Resize "800x webp").Permalink  }}
+{{- $background_b := (((resources.Get "/illustration/background-home.jpg").Filter $filter).Resize "1600x webp").Permalink  }}
+<link rel="preload "as="image" imagesrcset="{{ $background_s }} 1x, {{ $background_b }} 2x">
+
+<div class="container--sm">
+<br><br>
+<div class="note">
+  <p>{{ .Description | markdownify }}</p>
+</div>
+<ol>
+{{ range where (where .Site.Pages ".Section" "articles") "Kind" "page" }}
+  <li><strong><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a> - {{ with .Params.dateold }}<time>{{ . | safeHTML }}</time>{{ end }}</strong></li>
+{{- end -}}
+</ol>
+{{ partialCached "css.html" "css" "css" }}
+  {{ partialCached "content.html" .Content .Content }}
+</div>
+{{ end }}

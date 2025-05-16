@@ -1,0 +1,302 @@
+{{ define "main" }}
+<div class="container">
+  <section class="page-header--c">
+    <h1 class="page-header-title">{{ .Title }}</h1>
+  </section>
+</div>
+<section class="generic-single">
+  <div class="single-container markdown">
+    {{ if .Content }}
+    <div class="note">
+      <h2>La petite histoire</h2>
+      {{ .Content }}
+    </div>
+    {{ end }}
+    {{- $essence := (lower .Params.essence) -}}
+    {{- $key := slice -}}
+    {{- range (split (.Params.essence) ",")}}
+      {{ $path := printf "/essences/%s/" (trim (urlize .) "") }}
+      {{ $key = cond (fileExists $path) ($key | append ((index (where ($.Site.GetPage "essences").Pages "RelPermalink" "in" (slice $path)) 0).Resources)) $key }}
+    {{ end -}}
+    {{ $images := cond (not $key) slice $key }}
+    {{ with (.Resources.ByType "image") }}
+    <h2>Galerie</h2>
+    <div class="grid content-visibility-image">
+      {{ $counter := 0 }}
+      {{ range (shuffle (cond (gt (len $images) 0) (union . $images) .)) }}
+      {{ $counter = add $counter 1 }}
+        <figure>
+        {{ $img_src := . }}
+        {{- $imagetitle := index (split .Name ".") 0 -}}
+        {{ if $img_src }}
+        <a href="#"
+          class="gallery-image"
+          data-image="{{ ($img_src.Resize "1600x webp").Permalink }}"
+          data-title="{{ $imagetitle }}"
+        >
+        <img class="feature-image img"{{ if gt $counter 3 }} loading="lazy"{{ end }} style="--lqip:235884"
+          srcset="{{ ($img_src.Resize "500x webp").Permalink }} 480w, {{ ($img_src.Resize "800x webp").Permalink }} 800w"
+          sizes="(max-width: 600px) 480px, 800px"
+          src="{{ ($img_src.Resize "500x webp").Permalink }}"
+          alt="">
+        </a>
+          {{ end }}
+      </figure>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+<!-- Modal with improved accessibility -->
+<div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="loader" id="imageLoader" aria-hidden="true"></div>
+      <img class="modal-content" id="modalImage" alt="">
+      <div id="modalTitle" class="sr-only"></div>
+      <div id="modalDescription" class="sr-only">Press Escape to close. Use Arrow Left and Arrow Right to navigate between images.</div>
+  </div>
+</div>
+<style>
+  figure {
+    margin: 0 !important;
+  }
+
+
+.gallery-image:focus {
+  display: block;
+}
+
+.gallery-image:focus {
+    outline: 5px solid #000;
+    outline-offset: -5px;
+    border-radius: 30px;
+    background: #000;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-dialog {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #f1f1f1;
+    line-height: 1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0 10px 10px;
+    z-index: 1001;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    outline: 1px solid #fff;
+    outline-offset: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+/* Add responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .image-gallery li {
+        width: 32%; /* 3 columns for tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-gallery li {
+        width: 48%; /* 2 columns for phones */
+    }
+}
+
+/* Add loading spinner styles */
+.loader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1001;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Accessibility helper class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const loader = document.getElementById('imageLoader');
+    const closeBtn = document.getElementsByClassName('modal-close')[0];
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    let currentImageIndex = 0;
+
+    // Store focusable elements and last focused element
+    let focusableElements;
+    let lastFocusedElement;
+
+    // Function to get all focusable elements in modal
+    function getFocusableElements() {
+        return modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    }
+
+    // Function to trap focus in modal
+    function trapFocus(e) {
+        if (!modal.contains(document.activeElement)) {
+            focusableElements[0].focus();
+            e.preventDefault();
+        }
+    }
+
+    // Function to navigate between images
+    function navigateImages(direction) {
+        currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+        const nextImage = galleryImages[currentImageIndex];
+        showImage(nextImage);
+    }
+
+    // Function to show image in modal
+    function showImage(element) {
+        loader.style.display = "block";
+        modalImg.style.display = "none";
+
+        const newImage = new Image();
+        newImage.src = element.getAttribute('data-image');
+        const imageTitle = element.getAttribute('data-title');
+
+        modalTitle.textContent = `Image: ${imageTitle}`;
+        modalImg.alt = imageTitle;
+
+        newImage.onload = function() {
+            loader.style.display = "none";
+            modalImg.src = newImage.src;
+            modalImg.style.display = "block";
+        };
+
+        newImage.onerror = function() {
+            loader.style.display = "none";
+            alert('Error loading image');
+            closeModal();
+        };
+    }
+
+    // Function to open modal
+    function openModal(element) {
+        lastFocusedElement = document.activeElement;
+        modal.style.display = "block";
+        currentImageIndex = Array.from(galleryImages).indexOf(element);
+        showImage(element);
+
+        // Set up focus trap
+        focusableElements = getFocusableElements();
+        document.addEventListener('focus', trapFocus, true);
+        closeBtn.focus();
+    }
+
+    // Function to close modal
+    function closeModal() {
+        modal.style.display = "none";
+        document.removeEventListener('focus', trapFocus, true);
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+    }
+
+    // Event Listeners
+    galleryImages.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal(this);
+        });
+    });
+
+    closeBtn.onclick = closeModal;
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // Enhanced keyboard navigation
+    document.addEventListener('keydown', function(event) {
+        if (modal.style.display === "block") {
+            switch(event.key) {
+                case 'Escape':
+                    closeModal();
+                    break;
+                case 'ArrowLeft':
+                    navigateImages(-1);
+                    break;
+                case 'ArrowRight':
+                    navigateImages(1);
+                    break;
+                case 'Tab':
+                    if (event.shiftKey && document.activeElement === focusableElements[0]) {
+                        focusableElements[focusableElements.length - 1].focus();
+                        event.preventDefault();
+                    } else if (!event.shiftKey && document.activeElement === focusableElements[focusableElements.length - 1]) {
+                        focusableElements[0].focus();
+                        event.preventDefault();
+                    }
+                    break;
+            }
+        }
+    });
+});
+</script>
+{{ end }}

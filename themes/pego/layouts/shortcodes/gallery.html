@@ -1,0 +1,27 @@
+{{ $path := printf "gallery/%s/" (.Get 0) }}
+<div class="grid">
+{{ range readDir (printf "static/%s" $path) }}
+<div class="flip-card-container">
+<div class="flip-card enlarge-link">
+  <div class="card-front">
+    <figure>
+      {{ $img_src := resources.GetMatch (printf "gallery/main/%s" .Name) }}
+      {{ if $img_src }}
+      <img class="feature-image img"
+        srcset="{{ ($img_src.Resize "500x webp").Permalink }} 480w, {{ ($img_src.Resize "800x webp").Permalink }} 800w"
+        sizes="(max-width: 600px) 480px, 800px"
+        src="{{ ($img_src.Resize "500x webp").Permalink }}"
+        alt=""
+        loading="lazy">
+      {{ end }}
+    </figure>
+  </div>
+  <div class="card-back">
+    <h3><a href="#">Mon titre</a></h3>
+    <p>Lorem</p>
+  </div>
+</div>
+</div>
+{{ end }}
+</div>
+{{ partialCached "css.html" "css" "css" }}

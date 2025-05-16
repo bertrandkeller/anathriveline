@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-US" }}">
+<meta name="view-transition" content="same-origin" />
+<style>
+@view-transition {
+  navigation: auto;
+}
+</style>
+  {{- partial "head/head.html" . -}}
+  <body class="{{ .Kind }}">
+    {{- partial "header/header.html" . -}}
+    <main class="section">
+    {{- block "main" . }}{{- end }}
+    </main>
+    {{- partial "footer/footer.html" . -}}
+    {{- partial "footer/scripts.html" . -}}
+  </body>
+</html>

@@ -1,0 +1,62 @@
+{{ define "main" -}}
+<div class="container--sm">
+  <section class="page-header">
+    <h1 class="page-header-title">{{ .Title }}</h1>
+    <p class="page-header-desc">
+      {{- with .Params.Summary -}}
+        {{- . -}}
+      {{- else -}}
+        {{- with .Description -}}
+          {{- . | markdownify -}}
+        {{- end -}}
+      {{- end -}}
+    </p>
+    {{- if (eq .Type "study") }}
+    {{ $slides := .Params.slides }}
+    <br>
+    <ul class="list-unstyled list-inline">
+    {{- range where .OutputFormats "Rel" "alternate" }}
+      {{- if (eq .Format.BaseName "print") }}<li>>&nbsp;<a href="{{ .Permalink | safeURL }}">Lien vers la version à imprimer</a></li>{{ end }}&nbsp;
+      {{- if $slides }}{{- if (eq .Format.BaseName "presentation") }} - <li>&nbsp;<a href="{{ .Permalink | safeURL }}">Lien vers la version présentation</a></li>{{ end }}{{ end -}} 
+    {{- end }}
+   </ul>
+    {{- end }}
+  </section>
+  <section>
+    {{ $.Scratch.Set "menu" slice }}
+    {{ range (.Paginate .RegularPagesRecursive).Pages }}
+      {{- if (eq .Parent.Type "study") }}
+        {{- $.Scratch.Add "menu" .Title }}
+      {{- end }}
+    {{- end }}
+    {{- if gt (len ($.Scratch.Get "menu")) 0 }}
+    <div class="tableofcontents">
+      <ol>
+        {{ range ($.Scratch.Get "menu") }}
+          <li><a href="#{{ anchorize . }}">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{- end }}
+    {{- range $id, $value := (.Paginate .RegularPagesRecursive).Pages }}
+      {{- if (eq .Parent.Type "study") }}
+        <h2 id="{{ anchorize .Title }}">
+          {{ add $id 1 }} - {{ .Title }}
+          <a href="#{{ anchorize .Title | safeURL }}"></a>
+        </h2>
+        {{ partialCached "content.html" .Content .Content }}
+        <br>
+        <hr>
+        <br>
+      {{- else }}
+        {{ partial "posts/post-entry.html" . }}
+        <div class="post-entry-divider"></div>
+      {{- end }}
+    {{ else }}
+      {{ partial "general/fallback-text.html" . }}
+    {{ end }}
+    {{- $pages := where (where (.GetPage "interviews").RegularPagesRecursive "Params.slugpath" "eq" "digital-accessibility") "Title" "ne" "Model" }}
+    {{ template "_internal/pagination.html" . }}
+  </section>
+</div>
+{{ end }}

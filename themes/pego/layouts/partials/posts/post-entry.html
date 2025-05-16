@@ -1,0 +1,12 @@
+<div class="post-entry">                           
+  <h3 class="mb0">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h3>
+  <p class="post-list-summary mt0">
+    {{- with .Params.Summary -}}
+      {{- . -}}
+    {{- else -}}
+      {{- .Description -}}
+    {{- end -}}
+  </p>
+</div>

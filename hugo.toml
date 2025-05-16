@@ -1,0 +1,22 @@
+baseURL = ''
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = false
+enableInlineShortcodes = true
+removePathAccents = true
+title = 'anathriveline'
+theme = 'pego'
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[languages]
+  [languages.fr]
+    languageCode = "fr"
+    languageName = "Français"
+    weight = 1
+    title = "anathriveline"
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    weight = 2
+    title = "anathriveline"
