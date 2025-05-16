@@ -7,10 +7,10 @@ slug: portfolio-project-2
 author: John Doe
 
 draft: false
-dateold: "2020-02-20T03:52:30-05:00"
+date: "2020-02-20T03:52:30-05:00"
 lastmod: 
-expirydateold: ""
-publishdateold: ""
+expirydate: ""
+publishdate: ""
 
 feature_image: website.jpg
 feature_image_alt: Website

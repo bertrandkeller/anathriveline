@@ -7,10 +7,10 @@ slug: {{ .Name }}
 author: {{ .Site.Params.author }}
 
 draft: true
-dateold: "{{ .Date }}"
+date: "{{ .Date }}"
 lastmod: 
-expirydateold: ""
-publishdateold: ""
+expirydate: ""
+publishdate: ""
 
 feature_image: 
 feature_image_alt: 

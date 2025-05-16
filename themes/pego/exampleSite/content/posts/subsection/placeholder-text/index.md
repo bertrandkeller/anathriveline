@@ -7,10 +7,10 @@ slug: placeholder-text
 author: John Doe
 
 draft: false
-dateold: "2020-11-18T21:21:46-05:00"
+date: "2020-11-18T21:21:46-05:00"
 lastmod: 
-expirydateold: ""
-publishdateold: ""
+expirydate: ""
+publishdate: ""
 
 feature_image: screenshot.png
 feature_image_alt: A screenshot of the Hugo Liftoff theme home page

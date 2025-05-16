@@ -12,7 +12,7 @@
 </div>
 <ol>
 {{ range where (where .Site.Pages ".Section" "articles") "Kind" "page" }}
-  <li><strong><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a> - {{ with .Params.dateold }}<time>{{ . | safeHTML }}</time>{{ end }}</strong></li>
+  <li><strong><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a> - {{ with .Params.date }}<time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</strong></li>
 {{- end -}}
 </ol>
 {{ partialCached "css.html" "css" "css" }}

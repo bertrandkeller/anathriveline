@@ -7,10 +7,10 @@ slug: math-typesetting
 author: John Doe
 
 draft: false
-dateold: "2020-11-16T21:21:46-05:00"
+date: "2020-11-16T21:21:46-05:00"
 lastmod: 
-expirydateold: ""
-publishdateold: ""
+expirydate: ""
+publishdate: ""
 
 feature_image: 
 feature_image_alt: 

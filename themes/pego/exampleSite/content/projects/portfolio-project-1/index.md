@@ -7,10 +7,10 @@ slug: portfolio-project-1
 author: John Doe
 
 draft: false
-dateold: "2019-02-20T03:52:30-05:00"
+date: "2019-02-20T03:52:30-05:00"
 lastmod: 
-expirydateold: ""
-publishdateold: ""
+expirydate: ""
+publishdate: ""
 
 feature_image: web-design.jpg
 feature_image_alt: Web design
