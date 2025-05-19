@@ -73,7 +73,11 @@
   padding: 50px 0;
 }
 
+.d-block {
+  display: block;
+}
+
 .d-inline {
   display: inline;
-  vertical-align: sub;
+  vertical-align: baseline;
 }

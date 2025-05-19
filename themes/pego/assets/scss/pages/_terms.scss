@@ -5,7 +5,7 @@
   gap: 15px 15px;
 }
 
-.term {
+.term:not(body) {
   border: 1px solid var(--color-primary);
   border-radius: 20px;
   @include font-size('sm');

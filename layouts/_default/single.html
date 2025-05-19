@@ -9,12 +9,12 @@
     <div class="date center">{{ with .Params.date }}Date : <time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</div>
     <div class="note">
     <h2>Informations</h2>
-    {{ with .Params.author }}<strong>Auteur(s):</strong> {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.genre }}<strong>Genre(s) :</strong> {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.editor }}<strong>Editeur :</strong> {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.year }}<strong>Année de parution :</strong> {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.tags }}Tags :
-    <ul class="list-unstyled list-inline b-inline">
+    {{ with .Params.author }}<strong>Auteur(s):</strong> {{ . | safeHTML }}<br>{{ end }}
+    {{ with .Params.genre }}<strong>Genre(s) :</strong> {{ . | safeHTML }}<br>{{ end }}
+    {{ with .Params.editor }}<strong>Editeur :</strong> {{ . | safeHTML }}<br>{{ end }}
+    {{ with .Params.year }}<strong>Année de parution :</strong> {{ . | safeHTML }}<br>{{ end }}
+    {{ with .Params.tags }}<strong class="d-inline">Tags :</strong>
+    <ul class="list-unstyled list-inline d-inline">
     {{ range . }}
       <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
     {{ end }}
