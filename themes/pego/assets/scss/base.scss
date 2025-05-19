@@ -78,25 +78,12 @@
 
   hr {
     border: 0;
-    height: 2px;
-    width: 95%;
+    height: 4px;
+    width: 100%;
     position: relative;
-    margin: 2rem auto 1rem;
+    margin: 2rem auto;
     background: #8fc8e76f;
-  }
-
-  hr:before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: #cee6f3;
-    display: inline-block;
-    border: 2px solid #cee6f3;
-    position: absolute;
-    top: -4px;
-    left: 50%;
-    margin: 0 0 0 -3px;
-    transform: rotate(45deg);
+    border-bottom: 4px solid #dadada;
   }
 
   .content-visibility > *:nth-child(n + 3) {
