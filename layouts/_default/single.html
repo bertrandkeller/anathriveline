@@ -6,17 +6,21 @@
 </div>
 <section class="generic-single">
   <div class="single-container{{ if eq .Title "Roadmap"}} large{{ end }} markdown"> 
-    {{ with .Params.date }}Date : <time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}<br>
-    {{ with .Params.reference }}Liens : <a href="{{ . | safeHTML }}">{{ . | safeHTML }}</a>{{ end }}<br>
-    {{ with .Params.link }}Liens link : {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.author }}Auteur(s): {{ . | safeHTML }}{{ end }}<br>
-    {{ with .Params.tags }}Tags : 
-    <ul class="list-unstyled list-inline">
+    <div class="date center">{{ with .Params.date }}Date : <time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</div>
+    <div class="note">
+    <h2>Informations</h2>
+    {{ with .Params.author }}<strong>Auteur(s):</strong> {{ . | safeHTML }}{{ end }}<br>
+    {{ with .Params.genre }}<strong>Genre(s) :</strong> {{ . | safeHTML }}{{ end }}<br>
+    {{ with .Params.editor }}<strong>Editeur :</strong> {{ . | safeHTML }}{{ end }}<br>
+    {{ with .Params.year }}<strong>Année de parution :</strong> {{ . | safeHTML }}{{ end }}<br>
+    {{ with .Params.tags }}Tags :
+    <ul class="list-unstyled list-inline b-inline">
     {{ range . }}
       <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
     {{ end }}
     </ul>
     {{ end }}
+    </div>
 
     <hr>
     {{ with .Params.blockquote }}{{ . | safeHTML }}{{ end }}

@@ -10,7 +10,7 @@
       <ul class="social-icons--share">
         <!-- Twitter -->
         {{ if .Site.Params.social.share.twitter }}
-        <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="social-btn twitter">
+        <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="social-btn twitter">
           <li>{{ partial "svg/twitter.svg" }}</li>
         </a>
         {{ end }}
@@ -28,13 +28,13 @@
         {{ end }}
         <!-- LinkedIn -->
         {{ if .Site.Params.social.share.linkedin }}
-        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ $url }}&amp;title={{ $title }}&amp;summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="social-btn linkedin">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $url }}&source={{ $url }}&title={{ $title }}&summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="social-btn linkedin">
           <li>{{ partial "svg/linkedin.svg" }}</li>
         </a>
         {{ end }}
         <!-- Email -->
         {{ if .Site.Params.social.share.email }}
-        <a href="mailto:?subject={{ .Site.Title }}%20-%20{{ $title }}.&amp;body={{ $body }}" target="_blank" class="social-btn email">
+        <a href="mailto:?subject={{ .Site.Title }}%20-%20{{ $title }}.&body={{ $body }}" target="_blank" class="social-btn email">
           <li>{{ partial "svg/email.svg" }}</li>
         </a>
       </ul>
