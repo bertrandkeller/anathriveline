@@ -21,21 +21,21 @@
             {{ $filter := images.GaussianBlur 1 }}
             <div id=cover aria-hidden=true><img src={{ (((resources.Get "/pagejs/cover.jpg").Resize "1200x") | images.Filter $filter).Permalink }}>
                 <header>
-                    {{ with .Params.authors }}<p class=author>{{ delimit . "," }}</p>{{ end }}
+                    {{ with .Params.authors }}<p class=author>{{ delimit . "," }}{{ end }}
                     <h1>{{ .Title }}</h1>
                 </header>
                 <footer>
-                    <p>Handicap International</p>
+                    Handicap International
                 </footer>
             </div>
             <section id=first-page>
                 <header>
-                    {{ with .Params.authors }}<p class=author>{{ delimit . "," }}</p>{{ end }}
+                    {{ with .Params.authors }}<p class=author>{{ delimit . "," }}{{ end }}
                     <h1>{{ .Title }}</h1>
                     {{ with .Description }}{{ . | markdownify }}{{ end }}
                 </header>
                 <footer>
-                    <p>Handicap International</p>
+                    Handicap International
                 </footer>
             </section>
             <section id="toc" class=toc>

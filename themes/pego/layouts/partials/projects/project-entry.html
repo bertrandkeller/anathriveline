@@ -29,7 +29,7 @@
       {{- else -}}
         {{- .Description -}}
       {{- end -}}
-    </p>
+    
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="btn-group">
         {{ with .Params.live_url }}

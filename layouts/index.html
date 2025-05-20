@@ -8,7 +8,7 @@
 <div class="container--sm">
 <br><br>
 <div class="note">
-  <p>{{ .Description | markdownify }}</p>
+  {{ .Description | markdownify }}
 </div>
 <ol>
 {{ range where (where .Site.Pages ".Section" "articles") "Kind" "page" }}

@@ -4,13 +4,13 @@
 {{ range (where ($.Site.GetPage "section" "projects").RegularPagesRecursive "Title" "Papiers de recherche") }}
 <div class="tableofcontents">
     {{ with $title }}
-    <p><strong>{{ . }}</strong></p>
+    <strong>{{ . }}</strong>
     {{ end }}
     {{ range (where .Params.articles "name" $value) }}
         {{ .description | markdownify }}
         {{- $name := .name -}}
         <footer>
-        <p>{{ with .url }}<strong>– Source :</strong> <a href="{{ . }}">{{ $name }}</a></a>{{ end }}</p>
+        {{ with .url }}<strong>– Source :</strong> <a href="{{ . }}">{{ $name }}</a></a>{{ end }}
         </footer>
     {{ end }}
 </div>

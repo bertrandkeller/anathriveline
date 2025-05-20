@@ -8,7 +8,7 @@
   <div class="single-container{{ if eq .Title "Roadmap"}} large{{ end }} markdown">
     <div class="date center">{{ with .Params.date }}Date : <time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</div>
     <div class="note">
-    <h2>Informations</h2>
+    <h2 class="hidden">Informations</h2>
     {{- $img := (printf "media/%s.jpg" (path.BaseName .File.Filename)) }}
     {{- $img     := ((resources.Get  $img)) }}
     {{ with $img }}
@@ -30,30 +30,32 @@
     {{ end }}
     </div>
 
-    <hr>
-    {{ with .Params.blockquote }}{{ . | markdownify | safeHTML }}{{ end }}
+    {{- with .Params.blockquote }}
+    <h2>Description</h2>
+    {{ . | markdownify | safeHTML }}
+    {{ end }}
     {{ partialCached "content.html" .Content .Content }}
     {{ if eq .Type "modules" }}
       {{ $ctx := . }}
       {{- with $ctx.Params.sorte -}}
-        <p><strong>Type :</strong> {{ . }}</p>
+        <strong>Type :</strong> {{ . }}
       {{- end -}}
       {{- with $ctx.Description -}}
-        <p class="m-0"><strong>Description</strong></p>
+        <p class="m-0"><strong>Description</strong>
         {{ . | markdownify }}
       {{- end -}}
       <div class="project-list-footer">
       {{- with $ctx.Params.skills -}}
-        <p><strong>Compétences :</strong> {{ delimit . ", " }}</p>
+        <strong>Compétences :</strong> {{ delimit . ", " }}
       {{- end -}}
       {{- if and $ctx.Params.persons $ctx.Params.days -}}
-        <p><strong>Nombre de personnes à mobiliser :</strong> {{ $ctx.Params.persons }} personnes pendant {{ $ctx.Params.days }} jours</p>
+        <strong>Nombre de personnes à mobiliser :</strong> {{ $ctx.Params.persons }} personnes pendant {{ $ctx.Params.days }} jours
       {{- end -}}
       {{- if and $ctx.Params.persons $ctx.Params.days -}}
-        <p><strong>Coût :</strong> {{ lang.FormatNumberCustom 0 (mul $ctx.Params.days 833.3333) }} euros</p>
+        <strong>Coût :</strong> {{ lang.FormatNumberCustom 0 (mul $ctx.Params.days 833.3333) }} euros
       {{- end -}}
       {{- with $ctx.Params.profil -}}
-        <p><strong>Répartition du temps par profil :</strong></p>
+        <strong>Répartition du temps par profil :</strong>
         <ul>
         {{ range $key, $value := . }}
           <li>{{ $key | humanize }}: {{ $value }}%</li>
@@ -61,7 +63,7 @@
         </ul>
       {{- end -}}
       {{- with $ctx.Params.workshops -}}
-        <p>
+
             <strong>Ateliers potentiels :</strong>
             <ul>
             {{ range . }}
@@ -73,23 +75,23 @@
               {{ end }}
             {{ end }}
           </ul>
-        </p>
+
       {{- end -}}
       {{- with $ctx.Params.urls -}}
-      <p>
+
         <strong>Pour aller plus loin :</strong>
         <ul>
         {{ range . }}
           <li>{{ . | markdownify }}</li>
         {{ end }}
         </ul>
-      </p>
+
       {{ end }}
     {{ end }}
     {{- with .Params.resources -}}
       {{ range . }}
       <h3>{{ .topic }}</h3>
-      <p>
+
         {{ with .urls }}
         <ul>
           {{ range . }}
@@ -98,7 +100,7 @@
           {{ end }}
         </ul>
         {{ end }}
-      </p>
+
       {{ end }}
     {{ end }}
   </div>

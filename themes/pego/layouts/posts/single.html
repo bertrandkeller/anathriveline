@@ -21,7 +21,7 @@
       {{- else -}}
         {{- .Description -}}
       {{- end -}}
-    </p>
+
     <div class="single-terms">
       {{ with .Params.tags }}
       {{ range . }}
@@ -37,7 +37,7 @@
     {{- if .Params.series }}
       <div class="series">
         {{- $name := index .Params.series 0 }}
-        <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:</p>
+        Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:
         {{- $name := $name | urlize }}
         {{- $series := index .Site.Taxonomies.series $name }}
         {{ $curtitle := .Title }}
@@ -71,7 +71,7 @@
       {{- if .Params.series }}
         <div class="series">
           {{- $name := index .Params.series 0 }}
-          <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:</p>
+          Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:
           {{- $name := $name | urlize }}
           {{- $series := index .Site.Taxonomies.series $name }}
           {{ $curtitle := .Title }}

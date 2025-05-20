@@ -9,18 +9,18 @@ author: John Doe
 draft: false
 date: 2020-11-17T21:21:46-05:00
 lastmod: 2020-12-17T21:21:46-05:00
-expirydate: 
-publishdate: 
+expirydate:
+publishdate:
 
-feature_image: 
-feature_image_alt: 
+feature_image:
+feature_image_alt:
 
 categories:
   - Web Development
 tags:
   - Markdown
   - HTML
-series: 
+series:
   - Learn Markdown
 
 toc: true
@@ -91,7 +91,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   <title>Example HTML5 Document</title>
 </head>
 <body>
-  <p>Test</p>
+  Test
 </body>
 </html>
 ```
@@ -105,7 +105,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
       <title>Example HTML5 Document</title>
     </head>
     <body>
-      <p>Test</p>
+      Test
     </body>
     </html>
 
@@ -119,7 +119,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   <title>Example HTML5 Document</title>
 </head>
 <body>
-  <p>Test</p>
+  Test
 </body>
 </html>
 {{< /highlight >}}

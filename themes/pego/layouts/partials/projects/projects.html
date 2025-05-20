@@ -20,12 +20,12 @@
           {{- end }}
         {{- end -}}
       {{- end -}}
-    </p>
+
   </section>
   <section>
     {{ partialCached "content.html" .Content .Content }}
     {{ if in .Permalink "ts/offers" }}
-    
+
     {{ with .Pages }}
       {{ range (where (where . ".Params.sitemapExclude" "ne" "true" ) "Params.genre" "eq" "page") }}
       <div class="container--sm section-offers">
@@ -71,15 +71,15 @@
             </div>
             {{ end }}
         {{ end }}
-        <div class="item r background-0" style="--grid-place: r0"><p><strong>Sociale</strong></p></div>
-        <div class="item r background-1" style="--grid-place: r1"><p><strong>Métiers</strong></p></div>
-        <div class="item r background-2" style="--grid-place: r2"><p><strong>Technique</strong></p></div>
-        <div class="item r background-3" style="--grid-place: r3"><p><strong>+Assistance+</strong></p></div>
+        <div class="item r background-0" style="--grid-place: r0"><strong>Sociale</strong></div>
+        <div class="item r background-1" style="--grid-place: r1"><strong>Métiers</strong></div>
+        <div class="item r background-2" style="--grid-place: r2"><strong>Technique</strong></div>
+        <div class="item r background-3" style="--grid-place: r3"><strong>+Assistance+</strong></div>
         {{- range $key, $value := $titles }}
         <div class="item c background-head" style="--grid-place: c{{ $key }}"><strong>Pack 1<br>{{ . }}<br>{{ lang.FormatNumberCustom 0 (mul (index ($.Scratch.Get "days") (string $key)) 833.3333) "-|.| " "|" }} € - {{ (index ($.Scratch.Get "days") (string $key)) }} jours</strong></div>
         {{ end -}}
       </div>
-      
+
       <h3>Compétences nécessaires par Pack</h3>
       <div class="flex">
         {{- range seq 3 }}
@@ -136,7 +136,7 @@
       </div>
       {{ range  $id, $value := ($.Site.GetPage "modules").Sections }}
         <h3 class="title-color{{ if gt ($id) 0 }} title-separator{{ end }}">{{ add $id 1 }} - {{ .Title }}</h3>
-        <p>{{ .Params.description | markdownify }}</p>
+        {{ .Params.description | markdownify }}
         <div class="project-list offers">
         {{ range $key, $value := sort .RegularPages "Params.pack" "asc"  }}
           {{ partial "projects/project-offers.html" (dict "context" . "id" $id "key" $key) }}

@@ -4,7 +4,7 @@
     <div class="hero-info page-header--c">
       <h1 class="hero-title">{{ .Title }}</h1>
       {{ with .Params.subtitle }}
-        <p class="hero-subtitle hidden">{{. | markdownify}}</p>
+        <p class="hero-subtitle hidden">{{. | markdownify}}
       {{ end }}
       {{ if or .Params.primary_cta_page .Params.secondary_cta_page }}
       <div class="btn-group">

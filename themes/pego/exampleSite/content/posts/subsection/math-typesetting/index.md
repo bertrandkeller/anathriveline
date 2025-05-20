@@ -8,19 +8,19 @@ author: John Doe
 
 draft: false
 date: 2020-11-16T21:21:46-05:00
-lastmod: 
-expirydate: 
-publishdate: 
+lastmod:
+expirydate:
+publishdate:
 
-feature_image: 
-feature_image_alt: 
+feature_image:
+feature_image_alt:
 
 categories:
   - Math
 tags:
   - KaTeX
   - Notation
-series: 
+series:
 
 toc: true
 related: true
@@ -35,7 +35,7 @@ In this example we will be using [KaTeX](https://katex.org/).
 
 - Create a partial under `/layouts/partials/math.html`.
 - Within this partial reference the [Auto-render Extension](https://katex.org/docs/autorender.html) or host these scripts locally.
-- Include the partial in your templates like so:  
+- Include the partial in your templates like so:
 
 ```go-html-template
 {{ if or .Params.math .Site.Params.math }}
@@ -62,12 +62,12 @@ In this example we will be using [KaTeX](https://katex.org/).
 KaTeX support will be added in a future release.
 
 <!-- {{< math.inline >}}
-<p>
+
 Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
-</p>
+
 {{</ math.inline >}} -->
 
 <!-- Block math:
 $$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
+ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
 $$ -->

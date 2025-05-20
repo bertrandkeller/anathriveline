@@ -138,7 +138,7 @@
     {{ $value      := .value }}
     {{ $context    := .context }}
     {{ $collection := .collection }}
-    <!--<p class="slide-number hide"><span class="invisible">Slide numéro</span> {{ add $key 1 }}/{{ (len $slides) }}</p>
+    <!--<p class="slide-number hide"><span class="invisible">Slide numéro</span> {{ add $key 1 }}/{{ (len $slides) }}
     <span class="progress hide" style="width: {{ div (mul (add $key 1) 100) (len $slides) }}%;"></span>
     -->
     {{ with $value.part }}<h1>{{ replace . " ?" "&nbsp;?" | safeHTML}}</h1>{{ end }}
@@ -165,7 +165,7 @@
         {{ end }}
         {{ end }}
     {{ end }}
-    {{ with $value.texte }}<p>{{ replace (. | markdownify ) "<li>" "<li class='fragment'>" | safeHTML }}</p>{{ end }}
+    {{ with $value.texte }}{{ replace (. | markdownify ) "<li>" "<li class='fragment'>" | safeHTML }}{{ end }}
     {{ with $value.focus }}{{ . | markdownify | safeHTML }}{{ end }}
-    
+
 {{ end }}

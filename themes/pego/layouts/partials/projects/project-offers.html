@@ -6,7 +6,7 @@
       <a href="{{ $ctx.Permalink }}">{{ $ctx.Title }}</a>
       <sup>{{ partial "general/label-drafts.html" $ctx }}</sup>
     </h4>
-    <p class="crit">#{{ $ctx.Parent.Params.level }}.{{ add .key 1 }}</p>
+    <p class="crit">#{{ $ctx.Parent.Params.level }}.{{ add .key 1 }}
     {{- with $ctx.Params.goals -}}
       <ul>
         {{ range . }}
@@ -14,7 +14,7 @@
         {{ end -}}
       </ul>
     {{ end -}}
-    <p class="m0 invisible">{{ $ctx.Params.persons }} personnes, {{ $ctx.Params.days }} jours</p>
+    <p class="m0 invisible">{{ $ctx.Params.persons }} personnes, {{ $ctx.Params.days }} jours
     {{ if not $ctx.Params.profil }}No profils{{ end }}
   </div>
   {{ else }}
@@ -35,9 +35,9 @@
         <a href="{{ $ctx.Permalink }}">{{ $ctx.Title }}</a>
         <sup>{{ partial "general/label-drafts.html" $ctx }}</sup>
       </h4>
-      <p class="crit">#{{ $ctx.Parent.Params.level }}.{{ add .key 1 }}</p>
+      <p class="crit">#{{ $ctx.Parent.Params.level }}.{{ add .key 1 }}
       {{- with $ctx.Params.sorte -}}
-        <p><strong>{{ . }}</strong></p>
+        <strong>{{ . }}</strong>
       {{- end -}}
       <div class="project-list-summary">
         {{- with $ctx.Description -}}
@@ -57,10 +57,10 @@
             {{ range . }}
               #{{ . }}
             {{ end }}
-          </p>
+
         {{- end -}}
         {{- if and $ctx.Params.persons $ctx.Params.days -}}
-          <p class="m-0"><strong>{{ $ctx.Params.persons }} personnes pendant {{ $ctx.Params.days }} jours</strong></p>
+          <p class="m-0"><strong>{{ $ctx.Params.persons }} personnes pendant {{ $ctx.Params.days }} jours</strong>
         {{- end -}}
       </div>
     </div>

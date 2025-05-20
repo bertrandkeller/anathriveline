@@ -7,7 +7,7 @@
       {{- with .Params.Summary -}}
         {{- . -}}
       {{- end -}}
-    </p>
+    
   </section>
   {{ if eq .Title "Interviews" }}
   {{ $pagesstats := where $pages "Params.data.needexpert" "ne" "" }}
@@ -39,7 +39,7 @@
           {{- if (index .Params.data "first-win") -}}
           <p class="project-list-summary">
            {{ index .Params.data "first-win" }}
-          </p>
+          
           {{- end -}}
         </div>
       </div>
@@ -65,7 +65,7 @@
           {{- if (index .Params.data "first-win") -}}
           <p class="project-list-summary">
            {{ index .Params.data "first-win" }}
-          </p>
+          
           {{- end -}}
         </div>
       </div>

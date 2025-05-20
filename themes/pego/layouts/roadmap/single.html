@@ -200,9 +200,9 @@
                 <span class="circle"></span>
                 <div class="content">
                     {{- with .description -}}
-                    <p>
+
                     {{ . }}
-                    </p>
+
                     {{- end -}}
                 </div>
               </div>
@@ -255,8 +255,8 @@
                 {{- $nameactivities := .name }}
                 {{- $durationactivities := .duration }}
                 {{- $deadlineactivities := .deadline }}
-                {{- $values := . }}      
-                {{- with .charge }}                    
+                {{- $values := . }}
+                {{- with .charge }}
                   <tr>
                     <td style="width:250px"><strong>{{ $nametopics }}</strong></td>
                     <td>{{ $nameactivities }}</td>
@@ -265,7 +265,7 @@
                     {{- range seq 4 }}
                     <td>{{ with (index (index ($.Scratch.Get (printf "roadmap%s" $nametheme)) (string .)) $nameactivities) }}{{ . }}%{{ else }}0{{ end }}</td>
                     {{ end -}}
-                </tr>  
+                </tr>
                 {{- end -}}
               {{- end -}}
             {{- end -}}
@@ -283,7 +283,7 @@
           </tfoot>
         </table>
       {{- end -}}
-    
+
   </div>
 </section>
 {{- end -}}

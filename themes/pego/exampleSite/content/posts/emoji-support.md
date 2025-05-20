@@ -9,11 +9,11 @@ author: John Doe
 draft: false
 date: 2020-11-17T21:21:46-05:00
 lastmod: 2020-11-18T21:21:46-05:00
-expirydate: 
-publishdate: 
+expirydate:
+publishdate:
 
-feature_image: 
-feature_image_alt: 
+feature_image:
+feature_image_alt:
 
 categories:
   - Formatting
@@ -35,7 +35,7 @@ To enable emoji globally, set `enableEmoji` to `true` in your site's [configurat
 
 I :heart: Hugo!
 
-<p><span class="nowrap"><span class="emojify">🙈</span> <code>:see_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙉</span> <code>:hear_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙊</span> <code>:speak_no_evil:</code></span></p>
+<span class="nowrap"><span class="emojify">🙈</span> <code>:see_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙉</span> <code>:hear_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙊</span> <code>:speak_no_evil:</code></span>
 <br>
 
 The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference for emoji shorthand codes.
