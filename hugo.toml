@@ -14,9 +14,9 @@ unsafe = true
     languageCode = "fr"
     languageName = "Français"
     weight = 1
-    title = "anathriveline"
+    title = "Anath Riveline"
   [languages.en]
     languageCode = "en"
     languageName = "English"
     weight = 2
-    title = "anathriveline"
+    title = "Anath Riveline"
