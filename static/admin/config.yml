@@ -18,6 +18,5 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Genre", name: "genre", widget: "string", required: false}
       - {label: "Editeur", name: "editor", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Contenu", name: "blockquote", widget: "markdown", required: false}
-      - {label: "Contenu", name: "body", widget: "markdown", required: false}
       - {label: "Année de publication", name: "year", widget: "number", required: false}
+      - {label: "Contenu", name: "blockquote", widget: "markdown", required: false}

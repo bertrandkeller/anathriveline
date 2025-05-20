@@ -257,7 +257,7 @@
         {{ range .countries }}
           <h3>{{ .name }}</h3>
           {{ range $id, $value := .competitor  }}
-          <p class="m0"><strong>{{ add $id 1 }}. {{ .name }}{{ with .url}} <small>- <a href="{{ . }}">{{ . }}</a></small>{{ end }}</strong></p>
+          <p class="m-0"><strong>{{ add $id 1 }}. {{ .name }}{{ with .url}} <small>- <a href="{{ . }}">{{ . }}</a></small>{{ end }}</strong></p>
             {{ with .links }}
             <p class="mb0"><small>Liens notables :</small></p>
             <ul class="mt0">

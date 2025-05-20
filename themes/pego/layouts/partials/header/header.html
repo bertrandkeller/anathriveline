@@ -1,5 +1,10 @@
 <header class="container">
   <nav class="main-nav" id="js-navbar">
+    <span class="flex mt-2 align-items enlarge-link">
+      <a href="{{ .Site.BaseURL }}">
+        <span class="logo">{{ .Site.Title }}</span>
+      </a>
+    </span>
     <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}

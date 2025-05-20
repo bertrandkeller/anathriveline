@@ -5,10 +5,18 @@
   </section>
 </div>
 <section class="generic-single">
-  <div class="single-container{{ if eq .Title "Roadmap"}} large{{ end }} markdown"> 
+  <div class="single-container{{ if eq .Title "Roadmap"}} large{{ end }} markdown">
     <div class="date center">{{ with .Params.date }}Date : <time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</div>
     <div class="note">
     <h2>Informations</h2>
+    {{- $img := (printf "media/%s.jpg" (path.BaseName .File.Filename)) }}
+    {{- $img     := ((resources.Get  $img)) }}
+    {{ with $img }}
+    <figure>
+      <img src="{{ $img.Permalink }}" alt="">
+    </figure>
+    {{ end }}
+    </figure>
     {{ with .Params.author }}<strong>Auteur(s):</strong> {{ . | safeHTML }}<br>{{ end }}
     {{ with .Params.genre }}<strong>Genre(s) :</strong> {{ . | safeHTML }}<br>{{ end }}
     {{ with .Params.editor }}<strong>Editeur :</strong> {{ . | safeHTML }}<br>{{ end }}
@@ -23,7 +31,7 @@
     </div>
 
     <hr>
-    {{ with .Params.blockquote }}{{ . | safeHTML }}{{ end }}
+    {{ with .Params.blockquote }}{{ . | markdownify | safeHTML }}{{ end }}
     {{ partialCached "content.html" .Content .Content }}
     {{ if eq .Type "modules" }}
       {{ $ctx := . }}
@@ -31,7 +39,7 @@
         <p><strong>Type :</strong> {{ . }}</p>
       {{- end -}}
       {{- with $ctx.Description -}}
-        <p class="m0"><strong>Description</strong></p>
+        <p class="m-0"><strong>Description</strong></p>
         {{ . | markdownify }}
       {{- end -}}
       <div class="project-list-footer">

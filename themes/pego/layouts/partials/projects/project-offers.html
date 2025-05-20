@@ -53,14 +53,14 @@
       {{ end -}}
       <div class="project-list-footer">
         {{- with $ctx.Params.skills -}}
-          <p class="m0">
+          <p class="m-0">
             {{ range . }}
               #{{ . }}
             {{ end }}
           </p>
         {{- end -}}
         {{- if and $ctx.Params.persons $ctx.Params.days -}}
-          <p class="m0"><strong>{{ $ctx.Params.persons }} personnes pendant {{ $ctx.Params.days }} jours</strong></p>
+          <p class="m-0"><strong>{{ $ctx.Params.persons }} personnes pendant {{ $ctx.Params.days }} jours</strong></p>
         {{- end -}}
       </div>
     </div>

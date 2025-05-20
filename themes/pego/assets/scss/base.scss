@@ -108,24 +108,33 @@
     padding-bottom: 1em;
     border-bottom: 1px solid #666;
   }
+  
+  .center {
+    margin: 0 0 2rem;
+    text-align: center;
+  }
 
-  .m0 {
+  .m-0 {
     margin: 0;
   }
 
-  .mt0 {
+  .mt-0 {
     margin-top: 0;
   }
 
-  .mb0 {
+  .mt-2 {
+    margin-top: 1rem;
+  }
+
+  .mb-0 {
     margin-bottom: 0;
   }
 
-  .p0 {
+  .p-0 {
     padding: 0;
   }
 
-  .p1 {
+  .chart-pie {
     padding: 1em;
   }
 
