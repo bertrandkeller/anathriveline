@@ -6,13 +6,18 @@
 <link rel="preload "as="image" imagesrcset="{{ $background_s }} 1x, {{ $background_b }} 2x">
 
 <div class="container--sm">
-<br><br>
-<div class="note">
+{{/*
+<div class="note hide-text">
   {{ .Description | markdownify }}
 </div>
-<ol>
+*/}}
+<ol class="list-unstyled">
 {{ range where (where .Site.Pages ".Section" "articles") "Kind" "page" }}
-  <li><strong><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a> - {{ with .Params.date }}<time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</strong></li>
+  <li>
+    <strong>
+      <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a> <br /> {{ with .Params.date }}<time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}
+    </strong>
+  </li>
 {{- end -}}
 </ol>
 {{ partialCached "css.html" "css" "css" }}
