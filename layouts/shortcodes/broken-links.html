@@ -1,0 +1,137 @@
+{{- $my_state := "" -}} {{/* INFO, BROKEN, SKIPPED, OK */}}
+{{- $my_mode := "" -}} {{/* intern, extern, all */}}
+
+{{ $list := slice -}}
+
+{{/* Defekte Links, siehe auch: link-check.md, broken-links.html, render-link.html, links-check.ts */}}
+
+{{- if .IsNamedParams -}}
+{{- $my_state = .Get "state" | default "BROKEN" -}}
+{{- $my_mode = .Get "mode" | default "intern" -}} {{/* intern extern all*/}}
+
+{{- else -}}
+{{ errorf "Shortcode zitate.html: No Named Parameters provided!" }}
+{{- end -}}
+
+{{ $data := slice }}
+
+{{ if eq $my_mode "intern"}}
+{{ $data = site.Data.links_checked.internal }}
+{{ else if eq $my_mode "extern"}}
+{{ $data = site.Data.links_checked.external }}
+{{ else }} {{/* all */}}
+{{ $data = site.Data.links_checked }}
+{{ end }}
+
+{{/* TODO: .Destination | safeURL */}}
+{{/* https://discourse.gohugo.io/t/iterate-through-an-array-of-nested-maps-json-objects/15028 */}}
+
+{{ if eq $my_state "INFO"}} {{/* INFO or LINKS */}}
+
+{{/* OUPTUT INFO */}}
+
+<ul class="list-unstyled">
+  {{ range $data }} {{/* Only one */}}
+  <li>scanned: {{ .scan_source }}</li>
+
+  <li>lastrun: {{ .lastrun }}</li>
+  <li>runtime: {{ math.Round .runtime }} {{ .runtime_unit }} ({{ .runtime }})</li>
+  <li>finished: {{ .finished }}</li>
+
+  <li>found: {{ .found }}</li>
+  <li>dropped: {{ .dropped }}</li>
+
+  <li>total: {{ .total }}</li>
+  <li>ok: {{ .ok }}</li>
+  <li>broken: {{ .broken }}</li>
+  <li>skipped: {{ .skipped }}</li>
+  {{ end }}
+</ul>
+
+{{ else }} {{/* INFO OR LINKS */}}
+
+{{/* OUPTUT LINKS */}}
+
+{{/* Alle Links sammeln die zu einem parent gehören */}}
+
+{{ $groups := slice }}
+
+{{ range $data }}
+{{ range .links_broken }}
+{{ $groups = $groups | append .parent }}
+{{ end }}
+{{ end }}
+
+{{ $groups = $groups | uniq | sort }}
+
+<ul>
+  {{ range $groups }}
+  {{ $u := urls.Parse . }}
+  <li><a href="{{.}}">{{ $u.Path }}</a>
+
+    <ul>
+      {{ $d := index $data 0 }} {{/* Only one */}}
+
+      {{ $source := $d.links_broken }}
+      {{/* TODO immer andere Quelle: $d.links_broken ja nach $my_state "BROKEN" */}}
+      {{ if eq $my_state "BROKEN"}}
+      {{ $source = $d.links_broken }}
+      {{ else if eq $my_state "SKIPPED"}}
+      {{ $source = $d.links_skipped }}
+      {{ else if eq $my_state "OK"}}
+      {{ $source = $d.links_ok }}
+      {{ end }}
+
+      {{ range where $source "parent" . }}
+
+      {{/* shorten links for display: hallo-welt.de/../slug-ende/ */}}
+      {{/* https://gohugo.io/functions/urls/parse/ */}}
+
+      {{ if eq $my_state .state }}
+
+      {{ $u := urls.Parse .url }}
+      {{ $path := ""}}
+      {{ if ne $u.Path "/"}}
+      {{ $path = $u.Path }}
+      {{else}}
+      {{ $path = $u.Path }}
+      {{ end }}
+
+      <li>
+        <a href="{{.url}}">
+          {{ if eq .state "BROKEN" }}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+            <path d="M9 15l3 -3m2 -2l1 -1"></path>
+            <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+            <path d="M3 3l18 18"></path>
+            <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+          </svg>
+          {{ else if eq .state "OK"}}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+            <path d="M9 15l6 -6"></path>
+            <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+            <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+          </svg>
+          {{ else if eq .state "SKIPPED"}}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+            <path d="M9 15l6 -6"></path>
+            <path d="M11 6l.463 -.536a5 5 0 1 1 7.071 7.072l-.534 .464"></path>
+            <path d="M12.603 18.534a5.07 5.07 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+            <path d="M16 19h6"></path>
+          </svg>
+          {{ end }}
+        </a>├ {{ $u.Hostname }} ┼ {{ $path }}
+      </li>
+
+      {{ end }} {{/* eq my_State .state */}}
+      {{ end }} {{/* range where $d.links_broken "parent" . */}}
+    </ul>
+
+  </li>
+  {{ end }}
+</ul>
+
+{{end }} {{/* INFO ORE LINKS */}}

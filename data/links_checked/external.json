@@ -1,0 +1,916 @@
+[
+    {
+        "scan_source": "http://localhost:1313/",
+        "mode": "extern",
+        "special_excludes": [
+            "data:image/webp",
+            "blog:",
+            "troubleshooting:",
+            "mailto:"
+        ],
+        "lastrun": "2025-06-04 18:11:750",
+        "runtime": 2.0755665574499997,
+        "runtime_unit": "min",
+        "found": 1054,
+        "dropped": 927,
+        "finished": true,
+        "total": 127,
+        "ok": 90,
+        "broken": 37,
+        "skipped": 0,
+        "links_ok": [
+            {
+                "url": "http://www.city-editions.com/index.php?page=livre&ID_livres=440&ID_auteurs=242",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:109",
+                "parent": "http://localhost:1313/articles/128716850169/"
+            },
+            {
+                "url": "http://www.city-editions.com/index.php?page=livre&ID_livres=421&ID_auteurs=242",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:921",
+                "parent": "http://localhost:1313/articles/122749909849/"
+            },
+            {
+                "url": "http://www.city-editions.com/index.php?page=livre&ID_livres=360&ID_auteurs=203",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:733",
+                "parent": "http://localhost:1313/articles/109189204624/"
+            },
+            {
+                "url": "https://michel-lafon.ca/livres/les-chroniques-des-sagiciens-tome-1-camp-dentrainement/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:187",
+                "parent": "http://localhost:1313/articles/647199646056431616/"
+            },
+            {
+                "url": "http://www.michel-lafon.fr/livre/1693-Un_parfum_d_encre_et_de_liberte.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:256",
+                "parent": "http://localhost:1313/articles/139119435524/"
+            },
+            {
+                "url": "http://www.city-editions.com/index.php?page=livre&ID_livres=500&ID_auteurs=69",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:267",
+                "parent": "http://localhost:1313/articles/139040108504/"
+            },
+            {
+                "url": "https://t.umblr.com/redirect?z=http%3A%2F%2Fwww.michel-lafon.fr%2Flivre%2F2432-LE_PRINCE_DES_DRAGONS_-_T1.html&t=ZWI4YTdmYWY5ZmJiYzdlODIyNjMzN2E4Njc0YTNlMzBiZjIwMzAzYyw2MzExMTk1NzY1MzE0MTkxMzY%3D&b=t%3AAFZtUyO3mCgqH7W8yLrNmQ&p=https%3A%2F%2Fanathriveline.tumblr.com%2Fpost%2F631119576531419136&m=1&ts=1601882606",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:129",
+                "parent": "http://localhost:1313/articles/631119576531419136/"
+            },
+            {
+                "url": "http://www.k-libre.fr/klibre-ve/index.php?page=livre&id=476",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:442",
+                "parent": "http://localhost:1313/articles/35767909811/"
+            },
+            {
+                "url": "https://www.pocket.fr/tous-nos-livres/romans/romans-etrangers/un_parfum_dencre_et_de_liberte-9782266259002/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:707",
+                "parent": "http://localhost:1313/articles/156838933589/"
+            },
+            {
+                "url": "http://www.pocket.fr/site/_&100&9782266250061.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:11:713",
+                "parent": "http://localhost:1313/articles/115298983804/"
+            },
+            {
+                "url": "http://www.pocket.fr/site/pharaon_&104&9782266247627.html?RECHA=pharaon",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:108",
+                "parent": "http://localhost:1313/articles/101247421854/"
+            },
+            {
+                "url": "http://www.pocket.fr/site/un_chat_des_rues_nomm_bob_&100&9782266243520.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:218",
+                "parent": "http://localhost:1313/articles/88767510394/"
+            },
+            {
+                "url": "http://www.belfond.fr/site/petite_fille_perdue_&100&9782714452399.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:301",
+                "parent": "http://localhost:1313/articles/44728871818/"
+            },
+            {
+                "url": "http://www.editionsballand.com/nos_livres.ws",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:796",
+                "parent": "http://localhost:1313/articles/35725007166/"
+            },
+            {
+                "url": "https://www.editionsarchipel.com/livre/lart-de-courir-sous-la-pluie/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:821",
+                "parent": "http://localhost:1313/articles/189550070079/"
+            },
+            {
+                "url": "http://www.michel-lafon.fr/livre/2206-LE_BRUISSEMENT_DU_PAPIER_ET_DES_DESIRS.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:299",
+                "parent": "http://localhost:1313/articles/182955873764/"
+            },
+            {
+                "url": "http://www.pocket.fr/livres-poche/a-la-une/01-litterature/poussieres-detoiles/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:989",
+                "parent": "http://localhost:1313/articles/134457011084/"
+            },
+            {
+                "url": "http://www.pocket.fr/livres-poche/a-la-une/02-thriller/a-la-vie-a-la-mort/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:993",
+                "parent": "http://localhost:1313/articles/137280919999/"
+            },
+            {
+                "url": "http://www.pocket.fr/livres-poche/a-la-une/02-thriller/pyramide/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:013",
+                "parent": "http://localhost:1313/articles/133404993589/"
+            },
+            {
+                "url": "http://books.google.fr/books?id=HHIovUC5iHcC&printsec=frontcover&hl=fr",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:025",
+                "parent": "http://localhost:1313/articles/35917308985/"
+            },
+            {
+                "url": "http://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/la-cite-corrompue",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:274",
+                "parent": "http://localhost:1313/articles/161015422099/"
+            },
+            {
+                "url": "https://www.lisez.com/livre-de-poche/le-bruissement-du-papier-et-des-desirs/9782266291798",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:292",
+                "parent": "http://localhost:1313/articles/190731807254/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/les-inclassables",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:739",
+                "parent": "http://localhost:1313/articles/630662879488655360/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/le-livre-des-origines",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:752",
+                "parent": "http://localhost:1313/articles/190926160864/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-14-ans/le-dernier-tyran",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:754",
+                "parent": "http://localhost:1313/articles/651998799160541184/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/le-regne-des-loups",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:048",
+                "parent": "http://localhost:1313/articles/652271229831643136/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/les-menteurs-de-mariposa",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:053",
+                "parent": "http://localhost:1313/articles/630663112837742592/"
+            },
+            {
+                "url": "https://www.hachette.fr/livre/assassins-creed-tome-2-9782017052074",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:368",
+                "parent": "http://localhost:1313/articles/178537216594/"
+            },
+            {
+                "url": "http://www.belfond.fr/site/le_mal_d_aimer_&100&9782714450791.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:397",
+                "parent": "http://localhost:1313/articles/35768102481/"
+            },
+            {
+                "url": "http://books.google.fr/books?id=n3lP0TEF4a0C&pg=PT91&lpg=PT91&dq=harlequin+horizon+anath+riveline&source=bl&ots=UsXopvN4Lj&sig=4ERPz1U14U5S34jJxvwMIL1dnN0&hl=fr&sa=X&ei=a8GnUNyALqSS0QXK54DoCQ&ved=0CDwQ6AEwBQ",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:604",
+                "parent": "http://localhost:1313/articles/35917596725/"
+            },
+            {
+                "url": "https://www.hachette.fr/livre/six-crows-tome-1-9782016265376",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:739",
+                "parent": "http://localhost:1313/articles/167079190859/"
+            },
+            {
+                "url": "http://www.michel-lafon.fr/livre/1887-LE_SOUFFLE_DES_FEUILLES_ET_DES_PROMESSES.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:855",
+                "parent": "http://localhost:1313/articles/161310951664/"
+            },
+            {
+                "url": "http://www.belfond.fr/site/l_ile_de_tous_les_dangers_&100&9782714446435.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:131",
+                "parent": "http://localhost:1313/articles/35768782764/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/pieges",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:523",
+                "parent": "http://localhost:1313/articles/190926208199/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/le-livre-des-betes-supremes-hors-serie-3",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:637",
+                "parent": "http://localhost:1313/articles/643181680599941120/"
+            },
+            {
+                "url": "http://www.amazon.fr/Un-chat-rues-nomm%C3%A9-Bob/dp/2350134350",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:774",
+                "parent": "http://localhost:1313/articles/54002636370/"
+            },
+            {
+                "url": "http://www.amazon.fr/gp/product/2290059390/ref=s9_simh_gw_p14_d2_i1?pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=center-2&pf_rd_r=1MBXA8VY302SPZHN84VE&pf_rd_t=101&pf_rd_p=455673027&pf_rd_i=405320",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:785",
+                "parent": "http://localhost:1313/articles/76512557120/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/king-of-scars",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:007",
+                "parent": "http://localhost:1313/articles/187793902029/"
+            },
+            {
+                "url": "https://www.lisez.com/livre-de-poche/le-souffle-des-feuilles-et-des-promesses/9782266282116",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:048",
+                "parent": "http://localhost:1313/articles/174661157774/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=42684&categID=1416",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:273",
+                "parent": "http://localhost:1313/articles/35651811666/"
+            },
+            {
+                "url": "http://www.lechoixdeslibraires.com/livre-112296-66-nord.htm",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:216",
+                "parent": "http://localhost:1313/articles/35768343710/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=39911",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:330",
+                "parent": "http://localhost:1313/articles/35769052924/"
+            },
+            {
+                "url": "http://www.lechoixdeslibraires.com/livre-64558-les-visages-du-mal.htm",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:343",
+                "parent": "http://localhost:1313/articles/35768013497/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=39659",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:348",
+                "parent": "http://localhost:1313/articles/35768987429/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=39910",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:366",
+                "parent": "http://localhost:1313/articles/35769124095/"
+            },
+            {
+                "url": "https://www.hachette.fr/livre/assassins-creed-tome-1-9782016265338",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:531",
+                "parent": "http://localhost:1313/articles/167079257044/"
+            },
+            {
+                "url": "http://www.10-18.fr/livres-poche/livres/domaine-policier/tabou/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:594",
+                "parent": "http://localhost:1313/articles/126177705324/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/a-la-vie--a-la-mort?EAN13=9782365690690",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:611",
+                "parent": "http://localhost:1313/articles/109189406214/"
+            },
+            {
+                "url": "http://www.lechoixdeslibraires.com/livre-56464-l-art-de-courir-sous-la-pluie.htm",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:614",
+                "parent": "http://localhost:1313/articles/35768407498/"
+            },
+            {
+                "url": "http://www.pocket.fr/site/les_larmes_noires_de_mary_luther_&104&9782266234085.html?RECHA=Les+larmes+noires+de+Mary+Luther+",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:898",
+                "parent": "http://localhost:1313/articles/47687370774/"
+            },
+            {
+                "url": "https://www.livredepochejeunesse.com/grisha-tome-2",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:942",
+                "parent": "http://localhost:1313/articles/622239236709662720/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/pyramide?EAN13=9782365691147",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:012",
+                "parent": "http://localhost:1313/articles/103803924074/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/un-gout-de-cannelle-et-d-espoir?EAN13=9782365690409",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:097",
+                "parent": "http://localhost:1313/articles/82975744449/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/poussieres-d-etoiles?EAN13=9782365690492",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:107",
+                "parent": "http://localhost:1313/articles/63176043226/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=44070",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:213",
+                "parent": "http://localhost:1313/articles/53827274985/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=43374",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:215",
+                "parent": "http://localhost:1313/articles/44729712137/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=40665",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:669",
+                "parent": "http://localhost:1313/articles/35769208457/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/la-vallee-de-la-mort",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:179",
+                "parent": "http://localhost:1313/articles/185196624879/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/lecture-poche/des-10-ans-7006/loeil-du-dragon",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:232",
+                "parent": "http://localhost:1313/articles/187255990929/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/le-retour",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:823",
+                "parent": "http://localhost:1313/articles/169805026429/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/lecture-poche/des-9-ans/le-monde-englouti",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:912",
+                "parent": "http://localhost:1313/articles/170606943684/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/le-volcan-de-la-desolation",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:920",
+                "parent": "http://localhost:1313/articles/174173767379/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/lecture-poche/des-9-ans/le-reveil-des-guerriers",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:932",
+                "parent": "http://localhost:1313/articles/175069374914/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/le-dragon-de-glace",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:491",
+                "parent": "http://localhost:1313/articles/175069290119/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/la-griffe-du-chat-sauvage",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:496",
+                "parent": "http://localhost:1313/articles/182599738749/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/loiseau-de-feu",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:497",
+                "parent": "http://localhost:1313/articles/179375155279/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/lecture-poche/des-9-ans/katana",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:569",
+                "parent": "http://localhost:1313/articles/174636985604/"
+            },
+            {
+                "url": "http://www.amazon.fr/G%C3%A9meaux-Horoscope-2008-Dadhichi-Toth/dp/2280834146",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:635",
+                "parent": "http://localhost:1313/articles/35928559826/"
+            },
+            {
+                "url": "https://www.pocket.fr/tous-nos-livres/romans/romans-etrangers/un_gout_de_cannelle_et_despoir_collector-9782266282055/",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:698",
+                "parent": "http://localhost:1313/articles/167079319914/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/tabou/?EAN13=9782365690089",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:865",
+                "parent": "http://localhost:1313/articles/35768203285/"
+            },
+            {
+                "url": "http://www.10-18.fr/site/meurtre_en_hiver_polaire_&104&9782264055453.html?RECHA=Meurtre+en+hiver+polaire+",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:867",
+                "parent": "http://localhost:1313/articles/35910232858/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/les-chasseurs-de-tornades/?EAN13=9782365690065",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:931",
+                "parent": "http://localhost:1313/articles/35768284966/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/moxie",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:054",
+                "parent": "http://localhost:1313/articles/183260741359/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-10-14-ans/une-semaine-dans-lincroyable-bibliotheque-de-m-lemoncello",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:961",
+                "parent": "http://localhost:1313/articles/177514970369/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/le-chant-des-ronces",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:021",
+                "parent": "http://localhost:1313/articles/179375043154/"
+            },
+            {
+                "url": "http://www.bibliopoche.com/edition/Un-mari-presque-parfait--Messagere-de-charme/229555.html",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:270",
+                "parent": "http://localhost:1313/articles/35917757750/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/pharaon?EAN13=9782365690638",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:593",
+                "parent": "http://localhost:1313/articles/52287362428/"
+            },
+            {
+                "url": "http://www.lesescales.fr/ouvrage/meurtre-sur-l-avenue-b/?EAN13=9782365690355",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:603",
+                "parent": "http://localhost:1313/articles/48836241748/"
+            },
+            {
+                "url": "http://www.livredepochejeunesse.com/six-of-crows-tome-2",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:139",
+                "parent": "http://localhost:1313/articles/173539833789/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/lecture-poche/des-9-ans/la-bete-des-marais",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:233",
+                "parent": "http://localhost:1313/articles/165933245534/"
+            },
+            {
+                "url": "https://anathriveline.tumblr.com/post/654231008169934848/les-chroniques-des-sagiciens-t2",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:613",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "http://anathriveline.tumblr.com/post/156838933589/un-parfum-dencre-et-de-libert%C3%A9-the-mapmakers",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:806",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "http://anathriveline.tumblr.com/post/134457011084/poussi%C3%A8res-d%C3%A9toiles-the-promise-of-stardust",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:853",
+                "parent": "http://localhost:1313/articles/63176043226/"
+            },
+            {
+                "url": "http://anathriveline.tumblr.com/post/145147155089/six-of-crows-leigh-bardugo-fantastique-milan",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:044",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "http://anathriveline.tumblr.com/tagged/assassins%20creed",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:086",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "https://anathriveline.tumblr.com/post/166528563044/vingt-quatre-heures-dans-lincroyable-biblioth%C3%A8que",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:104",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "https://anathriveline.tumblr.com/post/187793902029/king-of-scars-leigh-bardugo-fantastique-milan",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:126",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "https://anathriveline.tumblr.com/tagged/animaltatoo",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:367",
+                "parent": "http://localhost:1313/articles/190926160864/"
+            },
+            {
+                "url": "http://anathriveline.tumblr.com/tagged/sixofcrows",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:539",
+                "parent": "http://localhost:1313/"
+            },
+            {
+                "url": "http://anathriveline.tumblr.com/tagged/bardugo",
+                "state": "OK",
+                "status": 200,
+                "scantime": "2025-06-04 18:12:570",
+                "parent": "http://localhost:1313/articles/667363712074711040/"
+            }
+        ],
+        "links_broken": [
+            {
+                "url": "http://www.city-editions.com/WebPages2014/TemoignageMondeSelonBob.php",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:11:389",
+                "parent": "http://localhost:1313/articles/97201547729/"
+            },
+            {
+                "url": "http://www.city-editions.com/WebPages2014/TemoignagePathfinder.php",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:11:391",
+                "parent": "http://localhost:1313/articles/89857144869/"
+            },
+            {
+                "url": "http://editions-terranova.com/Pages_Terra_Nova2014/RomanFilleSavaitPasLire.php",
+                "state": "BROKEN",
+                "status": 403,
+                "scantime": "2025-06-04 18:11:141",
+                "parent": "http://localhost:1313/articles/102381468654/"
+            },
+            {
+                "url": "http://www.city-editions.com/WebPages2014/ThrillerBibliothequeOubliee.php",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:11:738",
+                "parent": "http://localhost:1313/articles/88769053814/"
+            },
+            {
+                "url": "http://www.franceloisirs.com/catalogue/article/352165/A-toi-pour-toujours/McBeth-Colette",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:122",
+                "parent": "http://localhost:1313/articles/87679531404/"
+            },
+            {
+                "url": "http://www.franceloisirs.com/catalogue/article/684761/La-bonne-etoile-d-Elsie/McCoy-Sarah?intcmpid=mea1ACCUEILgauche",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:443",
+                "parent": "http://localhost:1313/articles/50671607910/"
+            },
+            {
+                "url": "http://www.franceloisirs.com/Product/LIVRES/439406",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:534",
+                "parent": "http://localhost:1313/articles/35916330031/"
+            },
+            {
+                "url": "http://www.franceloisirs.com/catalogue/article/570340/L-ile-de-tous-les-dangers/Cooper-Natasha",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:546",
+                "parent": "http://localhost:1313/articles/35911806684/"
+            },
+            {
+                "url": "http://www.livredepoche.com/les-chasseurs-de-tornades-jenna-blum-9782253162117",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:830",
+                "parent": "http://localhost:1313/articles/51458905402/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/lecture-poche/des-10-ans-7006/gardiens-immortels",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:374",
+                "parent": "http://localhost:1313/articles/187256041879/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=42394",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:183",
+                "parent": "http://localhost:1313/articles/35769397550/"
+            },
+            {
+                "url": "http://www.livredepoche.com/une-vache-sur-ma-place-de-parking-susan-edmiston-leonard-scheff-9782253166962",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:629",
+                "parent": "http://localhost:1313/articles/47637590762/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=41655",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:642",
+                "parent": "http://localhost:1313/articles/35769350138/"
+            },
+            {
+                "url": "http://www.bibliopoche.com/edition/Invitation-a-l-amour--Une-fiancee-irresistible--Un-papa-a-marier--Pour-le-meilleur/262806.html",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:743",
+                "parent": "http://localhost:1313/articles/35918018233/"
+            },
+            {
+                "url": "http://www.jailu.com/albums_detail.cfm?id=41636",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:067",
+                "parent": "http://localhost:1313/articles/35769277556/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-7-11-ans-fiction/hamster-au-bois-mordant",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:806",
+                "parent": "http://localhost:1313/articles/165253531079/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-7-11-ans-fiction/le-bal-des-douze-souris",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:367",
+                "parent": "http://localhost:1313/articles/165253667964/"
+            },
+            {
+                "url": "http://www.libfly.com/tu-iras-en-enfer-stephen-leather-anath-riveline-livre-912098.html",
+                "state": "BROKEN",
+                "status": 0,
+                "scantime": "2025-06-04 18:12:651",
+                "parent": "http://localhost:1313/articles/35768703821/"
+            },
+            {
+                "url": "http://www.libfly.com/l-amour-est-un-acte-d-heroisme-ordinaire-anath-riveline-danny-scheinmann-livre-911567.html",
+                "state": "BROKEN",
+                "status": 0,
+                "scantime": "2025-06-04 18:12:684",
+                "parent": "http://localhost:1313/articles/35768523903/"
+            },
+            {
+                "url": "http://www.libfly.com/l-icone-anath-riveline-gary-van-haas-livre-911761.html",
+                "state": "BROKEN",
+                "status": 0,
+                "scantime": "2025-06-04 18:12:701",
+                "parent": "http://localhost:1313/articles/35768589736/"
+            },
+            {
+                "url": "http://www.libfly.com/coup-de-foudre-et-business-plan-gemma-townley-anath-riveline-livre-910924.html",
+                "state": "BROKEN",
+                "status": 0,
+                "scantime": "2025-06-04 18:12:704",
+                "parent": "http://localhost:1313/articles/35727147676/"
+            },
+            {
+                "url": "http://www.libfly.com/bonne-a-tout-faire-anath-riveline-saira-rao-livre-911277.html",
+                "state": "BROKEN",
+                "status": 0,
+                "scantime": "2025-06-04 18:12:706",
+                "parent": "http://localhost:1313/articles/35727628294/"
+            },
+            {
+                "url": "https://www.editionsmilan.com/livres-jeunesse/fiction/romans-8-10-ans/ratponce",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:161",
+                "parent": "http://localhost:1313/articles/171619129309/"
+            },
+            {
+                "url": "http://www.editionsmilan.com/livres-jeunesse/fiction/romans-ados/six-of-crows-t-1",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:12:632",
+                "parent": "http://localhost:1313/articles/145147155089/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-10-ans-5302/gardiens-immortels",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:769",
+                "parent": "http://localhost:1313/articles/159484122154/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-12-ans/les-loups-ne-se-mangent-pas-entre-eux",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:105",
+                "parent": "http://localhost:1313/articles/183748837789/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-8-ans-5302/christiano-prince-du-kizkhistan",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:500",
+                "parent": "http://localhost:1313/articles/151742827164/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-10-ans/amour-yoga-et-petits-bla-bla",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:164",
+                "parent": "http://localhost:1313/articles/185859925494/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-12-ans/apres-lapocalypse",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:343",
+                "parent": "http://localhost:1313/articles/171859532174/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-14-ans/an-assassins-creed-series-last-descendants",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:515",
+                "parent": "http://localhost:1313/articles/153556462989/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-10-ans-5302/pieges",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:518",
+                "parent": "http://localhost:1313/articles/165253809099/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/litterature-7020/la-chute-des-dieux",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:689",
+                "parent": "http://localhost:1313/articles/179374976639/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/litterature-7020/le-monstre-de-gila",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:690",
+                "parent": "http://localhost:1313/articles/178925060144/"
+            },
+            {
+                "url": "https://www.bayard-editions.com/jeunesse/litterature/des-14-ans/la-salsa-est-un-sport-de-combat",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:866",
+                "parent": "http://localhost:1313/articles/184247912599/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-8-ans-5302/umbrio-le-terrible",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:869",
+                "parent": "http://localhost:1313/articles/166772734809/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-8-ans-5302/le-complot-bouzbekh",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:874",
+                "parent": "http://localhost:1313/articles/158151786974/"
+            },
+            {
+                "url": "http://www.bayard-editions.com/jeunesse/litterature/des-14-ans/la-tombe-du-khan",
+                "state": "BROKEN",
+                "status": 404,
+                "scantime": "2025-06-04 18:13:219",
+                "parent": "http://localhost:1313/articles/166598563459/"
+            }
+        ],
+        "links_skipped": []
+    }
+]

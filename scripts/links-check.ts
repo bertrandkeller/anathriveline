@@ -1,0 +1,16 @@
+import { Broken_Link_Checker, BLC_Parameter } from "md-curcuma"
+
+const url = 'http://localhost:1313/';
+// const url: string = 'http://192.168.178.91:81';
+
+let external_links: BLC_Parameter = new BLC_Parameter();
+external_links.scan_source = url;
+external_links.write_to = 'data/links_checked/external.json';
+external_links.mode = 'extern';
+Broken_Link_Checker.run(external_links);
+
+let internal_links: BLC_Parameter = new BLC_Parameter();
+internal_links.scan_source = url;
+internal_links.write_to = 'data/links_checked/internal.json';
+internal_links.mode = 'intern';
+Broken_Link_Checker.run(internal_links);

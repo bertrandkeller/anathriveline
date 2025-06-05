@@ -12,4 +12,10 @@ go.sum
 # Editors
 .vscode
 
+# CSS
 assets/css/base/main.css
+
+# Node
+package.json
+package-lock.json
+node_modules
