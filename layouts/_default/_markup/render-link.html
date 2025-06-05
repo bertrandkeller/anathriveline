@@ -1,0 +1,71 @@
+{{ $link := .Destination | safeURL }}
+{{ $url := urls.Parse $link }}
+{{ $message := "The link ist okay (200)" }}
+{{ $is_broken_link := false }}
+
+{{ if $url.IsAbs }}
+{{/* external link -> komplett überprüfen */}}
+
+{{ $data := site.Data.links_checked.external }} {{/* all links_broken */}}
+{{ $d := index $data 0 }} {{/* Only one */}}
+{{ $links_broken_array := $d.links_broken }}
+
+{{ range $links_broken_array }}
+
+{{if strings.Contains $link .url }}
+
+{{ if eq (string .status) "0" }} {{/* i have to cast .status to string to compare */}}
+{{ $message = println "This link seems okay with status=" .status }}
+{{ else if eq (string .status) "404" }}
+{{ $message = println "Sorry, this link does no longer exist, status=" .status }}
+{{ $is_broken_link = true }}
+{{ else if eq (string .status) "403" }}
+{{ $message = println "Sorry, access to this link seems forbidden, status=" .status }}
+{{ $is_broken_link = true }}
+{{ else }}
+{{ $message = println "Sorry, this link seems broken with status=" .status }}
+{{ $is_broken_link = true }}
+{{ end }} {{/* if status */}}
+{{ end }} {{/* if url */}}
+{{ end }} {{/* range */}}
+
+{{ else }} {{/* if $url.IsAbs */}}
+{{/* internal link -> nur path-anteil überprüfen */}}
+
+{{ $data := site.Data.links_checked.internal }} {{/* all links_broken */}}
+{{ $d := index $data 0 }} {{/* Only one */}}
+{{ $links_broken_array := $d.links_broken }}
+
+{{ range $links_broken_array }}
+{{ $url_test := urls.Parse .url }}
+{{if strings.Contains $url.Path $url_test.Path }}
+
+{{ if eq (string .status) "0" }}
+{{ $message = println "This link seems to be okay, but with status=" .status }}
+{{ else if eq (string .status) "404" }}
+{{ $message = println "Sorry, this link does no longer exist, status=" .status }}
+{{ $is_broken_link = true }}
+{{ else if eq (string .status) "403" }}
+{{ $message = println "Sorry, access to this link seems forbidden, status=" .status }}
+{{ $is_broken_link = true }}
+{{ else }}
+{{ $message = println "Sorry, this link seems broken with status=" .status }}
+{{ $is_broken_link = true }}
+{{ end }} {{/* if status */}}
+{{ end }} {{/* if url */}}
+{{ end }} {{/* range */}}
+
+{{ end }} {{/* if $url.IsAbs */}}
+
+<a {{ if $is_broken_link }} class="brokenlink" title="{{ $message }}" {{end}} href="{{ $link }}" {{ with .Title}}
+  title="{{ . }}" {{ end }}>{{ .Text | safeHTML }}{{ if strings.HasPrefix .Destination "http" }}<span
+    style="white-space: nowrap;">&thinsp;<svg style="margin-bottom: 5px" focusable="false"
+      class="icon icon-tabler icon-tabler-external-link" role="img" xmlns="http://www.w3.org/2000/svg" width="14"
+      height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+      stroke-linejoin="round">
+      <title>external link</title>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+      <path d="M11 13l9 -9" />
+      <path d="M15 4h5v5" />
+    </svg></span>{{ end }}</a>

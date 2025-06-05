@@ -8,26 +8,27 @@
   <div class="single-container{{ if eq .Title "Roadmap"}} large{{ end }} markdown">
     <div class="date center">{{ with .Params.date }}Date : <time>{{ .Format "01/02/2006" | safeHTML }}</time>{{ end }}</div>
     <div class="note">
-    <h2 class="hidden">Informations</h2>
-    {{- $img := (printf "media/%s.jpg" (path.BaseName .File.Filename)) }}
-    {{- $img     := ((resources.Get  $img)) }}
-    {{ with $img }}
-    <figure>
-      <img src="{{ $img.Permalink }}" alt="">
-    </figure>
-    {{ end }}
-    </figure>
-    {{ with .Params.author }}<strong>Auteur(s):</strong> {{ . | safeHTML }}<br>{{ end }}
-    {{ with .Params.genre }}<strong>Genre(s) :</strong> {{ . | safeHTML }}<br>{{ end }}
-    {{ with .Params.editor }}<strong>Editeur :</strong> {{ . | safeHTML }}<br>{{ end }}
-    {{ with .Params.year }}<strong>Année de parution :</strong> {{ . | safeHTML }}<br>{{ end }}
-    {{ with .Params.tags }}<strong class="d-inline">Tags :</strong>
-    <ul class="list-unstyled list-inline d-inline">
-    {{ range . }}
-      <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
-    {{ end }}
-    </ul>
-    {{ end }}
+      <h2 class="hidden">Informations</h2>
+      {{- $img := (printf "media/%s.jpg" (path.BaseName .File.Filename)) }}
+      {{- $img     := ((resources.Get  $img)) }}
+      {{ with $img }}
+      <figure>
+        <img src="{{ $img.Permalink }}" alt="">
+      </figure>
+      {{ end }}
+      </figure>
+      {{ with .Params.author }}<strong>Auteur(s):</strong> {{ . | safeHTML }}<br>{{ end }}
+      {{ with .Params.genre }}<strong>Genre(s) :</strong> {{ . | safeHTML }}<br>{{ end }}
+      {{ with .Params.editor }}<strong>Editeur :</strong> {{ . | safeHTML }}<br>{{ end }}
+      {{ with .Params.reference }}<strong>Référence :</strong> <a href="{{ . }}">{{ . }}</a><br>{{ end }}
+      {{ with .Params.year }}<strong>Année de parution :</strong> {{ . | safeHTML }}<br>{{ end }}
+      {{ with .Params.tags }}<strong class="d-inline">Tags :</strong>
+      <ul class="list-unstyled list-inline d-inline">
+      {{ range . }}
+        <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+      {{ end }}
+      </ul>
+      {{ end }}
     </div>
 
     {{- with .Params.blockquote }}
