@@ -33,10 +33,10 @@
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="btn-group">
         {{ with .Params.live_url }}
-          <a class="btn-primary" href="{{ . }}" target="_blank">Live</a>
+          <a class="btn-primary" href="{{ . }}">Live</a>
         {{ end }}
         {{ with .Params.source_url }}
-          <a class="btn-secondary" href="{{ . }}" target="_blank">Source</a>
+          <a class="btn-secondary" href="{{ . }}">Source</a>
         {{ end }}
       </div>
     {{ end }}
